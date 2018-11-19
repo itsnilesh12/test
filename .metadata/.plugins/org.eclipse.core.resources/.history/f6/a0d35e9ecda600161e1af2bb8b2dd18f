@@ -1,0 +1,27 @@
+package com.test;
+
+import java.util.StringTokenizer;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+public class Serilaizer {
+
+	static String  tempString = "System-Provided:{}";
+
+	
+	
+	public static void main(String[] args) {
+		
+		StringTokenizer st = new StringTokenizer(tempString,"System-Provided:");
+		
+		while (st.hasMoreElements()) {
+			System.out.println(st.nextElement());
+		}
+	
+		JsonParser parser = new JsonParser();
+		JsonObject o = parser.parse("").getAsJsonObject(); 
+
+	}
+
+}

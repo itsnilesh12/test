@@ -1,0 +1,28 @@
+package com.test;
+
+import java.util.StringTokenizer;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+public class Serilaizer {
+
+	static String  tempString = "System-Provided:{'YYY_SERVICES':''}/n";
+
+	
+	
+	public static void main(String[] args) {
+		
+		String systemValue = "";
+		StringTokenizer st = new StringTokenizer(tempString,"System-Provided:");
+		
+		while (st.hasMoreElements()) {
+			systemValue = (String) st.nextElement();
+		}
+	
+		JsonParser parser = new JsonParser();
+		JsonObject o = parser.parse(systemValue).getAsJsonObject(); 
+
+	}
+
+}

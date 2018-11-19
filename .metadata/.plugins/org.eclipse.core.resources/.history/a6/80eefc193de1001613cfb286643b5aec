@@ -1,0 +1,57 @@
+package com.linklist;
+
+public class SingleLinkList {
+
+	 static Node head = null;
+	
+	 private static void insertFirst(int data) {
+		 Node newNode = createNewNode(data);
+		 if(head == null){
+			 head = newNode;
+		 } else {
+			 newNode.setNext(head);
+			 head = newNode;
+		 }
+	 }
+	 private static void insertAfterNode(Node node, int data) {
+		 Node newNode = createNewNode(data);
+		 Node current = head;
+		 if(head == null){
+			 head = node;		 
+		 } else if(current.getData() == node.getData()) {			 
+			 newNode.setNext(current.getNext());
+			 current.setNext(newNode);
+		 } else {
+			 while (current != null) {
+				 if (current.getData() == node.getData()) {
+					 break;
+				 } else {
+					 current = current.getNext();
+				 }
+			 }			 
+			 if(current!=null){
+				 newNode.setNext(current.getNext());
+				 current.setNext(newNode);
+			 }
+		 }
+		 
+	 }
+	 
+	 private static void insertBeforeNode(Node node,int data){
+		 Node newNode = createNewNode(data);
+		 Node current = head;	 
+		 if(head == null) {
+			 head = node;
+		 } else if{
+			 
+		 } else {
+			 
+		 }
+		 
+	 }
+
+	private static Node createNewNode(int data) {
+		return new Node(data);
+	}
+	 
+}
